@@ -1,0 +1,16 @@
+.register {
+    line-height: normal;
+    border: 0.5px solid #5c5a5a;
+    padding: 0vw 10vw 5vw 10vw;
+    border-radius: 5px;
+    width:fit-content;
+    margin: auto;
+    text-align:center;
+    margin: auto;
+    margin-top: 8vw;
+   
+}
+
+.form-group {
+    margin-bottom: 15px; 
+}
