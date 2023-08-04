@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,13 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/success', function () {
-    return 'home';
+Route::Get('/login', function () {
+    return view('login');
 });
 
-Route::POST('/login', [UserController::class,'login']);
-
 Route::POST('/register', [UserController::class,'register']);
+
+Route::POST('/login', [LoginController::class,'login']);
+
+Route::POST('/logout', [LoginController::class,'logout']);
+

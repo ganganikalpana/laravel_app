@@ -12,36 +12,45 @@
     <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 </head>
 <body>
-    <div >
-    <form action="/register" method="POST" class="register">
-        <h1>Register</h1>
-        @csrf
-        <div>
-            <input name="name" type="text" placeholder="name" class="form-group">
-            @if($errors->has('name'))
-                <span class="error error-message"> {{ $errors->first('name') }}</span>
-            @endif
-        </div>
-
-        <div>
-            <input name="email" type="text" placeholder="email" class="form-group">
-            @if($errors->has('email'))
-                <span class="error error-message"> {{ $errors->first('email') }}</span>
-            @endif
-        </div>
-
-        <div>
-            <input name="password" type="password" placeholder="password" class="form-group">
-            @if($errors->has('password'))
-                <span class="error error-message"> {{ $errors->first('password') }}</span>
-            @endif
-            </div>
-        <button  >Register</button>
-        <div>
-            <a href="/login" onclick="submitForm()">Already have an account?</a>
-        </div>
+    @auth
+   <p> You are logged in!</p>
+   <form action="/logout" method="POST">
+    @csrf
+        <button>logout</button>
     </form>
-    </div>
+      @else  
+      <div >
+        <form action="/register" method="POST" class="register">
+            <h1>Register</h1>
+            @csrf
+            <div>
+                <input name="name" type="text" placeholder="name" class="form-group">
+                @if($errors->has('name'))
+                    <span class="error error-message"> {{ $errors->first('name') }}</span>
+                @endif
+            </div>
+    
+            <div>
+                <input name="email" type="text" placeholder="email" class="form-group">
+                @if($errors->has('email'))
+                    <span class="error error-message"> {{ $errors->first('email') }}</span>
+                @endif
+            </div>
+    
+            <div>
+                <input name="password" type="password" placeholder="password" class="form-group">
+                @if($errors->has('password'))
+                    <span class="error error-message"> {{ $errors->first('password') }}</span>
+                @endif
+                </div>
+            <button  >Register</button>
+            <div>
+                <a href="/login" >Already have an account?</a>
+            </div>
+        </form>
+        </div>
+    @endauth
+    
 </body>
     
 </html>

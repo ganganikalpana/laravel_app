@@ -8,11 +8,21 @@ class LoginController extends Controller
 {
     public function Login(Request $request){
         $incomingFields=$request->validate([
-            'email' =>['required','email'],
-            'password'=>['required','min:8','max:200'],
+            'name' =>['required'],
+            'password'=>['required'],
         ]);
-        $incomingFields['password']=bcrypt($incomingFields['password']);
-        auth()->Login($user);
+
+        if(auth()->attempt(['name'=>$incomingFields['name'],'password'=>$incomingFields['password']])) {
+            $request-> session()->regenerate();
+        }
+       
+            return redirect('/');
+
+                
+    }
+
+    public function Logout(){
+        auth()->logout();
         return redirect('/');
     }
 }
