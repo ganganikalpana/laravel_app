@@ -18,4 +18,8 @@ class UserController extends Controller
         User::create($incomingFields);
         return redirect("/login");
     }
+
+    public function login(Request $request){
+        return redirect('/success');
+    }
 }

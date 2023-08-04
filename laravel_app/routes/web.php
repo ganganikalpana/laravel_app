@@ -18,8 +18,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::POST('/login', function () {
-    return 'Thankyou';
+Route::get('/success', function () {
+    return 'home';
 });
+
+Route::POST('/login', [UserController::class,'login']);
 
 Route::POST('/register', [UserController::class,'register']);
