@@ -37,7 +37,11 @@
             @endif
             </div>
         <button  >Register</button>
+        <div>
+            <a href="/login" onclick="submitForm()">Already have an account?</a>
+        </div>
     </form>
     </div>
 </body>
+    
 </html>
