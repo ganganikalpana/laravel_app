@@ -15,10 +15,7 @@ class LoginController extends Controller
         if(auth()->attempt(['name'=>$incomingFields['name'],'password'=>$incomingFields['password']])) {
             $request-> session()->regenerate();
         }
-       
-            return redirect('/');
-
-                
+        return redirect('/post');                
     }
 
     public function Logout(){

@@ -13,11 +13,11 @@
 </head>
 <body>
     @auth
-   <p> You are logged in!</p>
-   <form action="/logout" method="POST">
-    @csrf
-        <button>logout</button>
-    </form>
+        <p> You are logged in!</p>
+        <form action="/logout" method="POST">
+            @csrf
+                <button>logout</button>
+            </form>
       @else  
       <div >
         <form action="/register" method="POST" class="register">
