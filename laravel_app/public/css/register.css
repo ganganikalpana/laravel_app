@@ -1,0 +1,62 @@
+.register {
+    line-height: normal;
+    border: 0.5px solid #5c5a5a;
+    padding: 0vw 10vw 5vw 10vw;
+    border-radius: 5px;
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    margin-top: 8vw;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.post-topbar {
+    padding-right: 10px;
+    text-align: right;
+    line-height: 5vw;
+    background-color: #4e4ddf;
+    border-radius: 5px;
+
+}
+
+.post-form {
+    line-height: normal;
+    border: 0.3px solid #5c5a5a;
+    padding: 3vw;
+    border-radius: 5px;
+}
+
+.all-posts {
+    background-color: rgb(117 117 143);
+    padding: 10px;
+    margin-bottom: 10px;
+    color: white;
+    border-radius: 5px;
+    position: relative;
+}
+
+.post-actions {
+    position: absolute;
+    top: 20px;
+    right: 3vw;
+    margin: 5px;
+    display: inline-block;
+    vertical-align: middle; 
+}
+
+.edit-link {
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+}
+
+.delete-button {
+    background-color: transparent;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
