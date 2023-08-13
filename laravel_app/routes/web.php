@@ -1,6 +1,7 @@
 <?php
 
 use App\Models\Post;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\UserController;
@@ -17,26 +18,31 @@ use App\Http\Controllers\LoginController;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+Route::get('/register', function () {
+    return view('reg');
 });
 
-Route::Get('/login', function () {
-    return view('login');
+Route::Get('/', function () {
+    $posts=[];
+    if (Auth()->check()){
+        $posts=Auth()->user()->userCoolPosts()->latest()->get();
+    }
+    return view('home',['posts'=>$posts]);
 });
 
 Route::POST('/register', [UserController::class,'register']);
 
 Route::POST('/login', [LoginController::class,'login']);
 
-Route::POST('/logout', [LoginController::class,'logout']);
+// Route::get('/logout', [LoginController::class,'logout']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 //posts
 
 Route::Get('/post', function () {
     $posts=[];
-    if (auth()->check()){
-        $posts=auth()->user()->userCoolPosts()->latest()->get();
+    if (Auth()->check()){
+        $posts=Auth()->user()->userCoolPosts()->latest()->get();
     }
     return view('posts',['posts'=>$posts]);
 });

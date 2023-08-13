@@ -28,7 +28,7 @@ class PostController extends Controller
 
     public function updatePost(Post $post,Request $request){
         if (auth()->user()->id!==$post['user_id']){
-            return redirect('/post');
+            return redirect('/');
         }
         $incomingFields=$request->validate([
             'title'=>'required',
@@ -39,13 +39,13 @@ class PostController extends Controller
 
         $post->update($incomingFields);
 
-        return redirect('/post');
+        return redirect('/');
     }
 
     public function removePost(Post $post){
         if (auth()->user()->id===$post['user_id']){
             $post->delete();
         }
-        return redirect('/post');
+        return redirect('/');
     }
 }

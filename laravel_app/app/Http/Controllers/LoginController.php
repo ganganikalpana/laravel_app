@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -15,11 +16,11 @@ class LoginController extends Controller
         if(auth()->attempt(['name'=>$incomingFields['name'],'password'=>$incomingFields['password']])) {
             $request-> session()->regenerate();
         }
-        return redirect('/post');                
+        return redirect('/');                
     }
 
     public function Logout(){
-        auth()->logout();
+        Auth::logout();
         return redirect('/');
     }
 }
