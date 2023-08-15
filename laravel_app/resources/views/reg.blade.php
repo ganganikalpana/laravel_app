@@ -12,9 +12,6 @@
     <link rel="stylesheet" href="{{ asset('css/register.css') }}">
 </head>
 <body>
-    @auth
-        @include('home')
-      @else  
       <div >
         <form action="/register" method="POST" class="register">
             <h1>Register</h1>
@@ -45,7 +42,6 @@
             </div>
         </form>
         </div>
-    @endauth
     
 </body>
     

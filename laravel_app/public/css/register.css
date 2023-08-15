@@ -1,12 +1,15 @@
 body{
-    background:#f9fafb!important ;
+    /* background:#f9fafb!important ; */
     /* font-family: 'Lato', sans-serif; */
     font-family: 'Open Sans', sans-serif;
+    background-image: url("images2.webp");
+    background-size: cover;
 }
 
 .register {
+    background:#f9fafb!important ;
     line-height: normal;
-    border: 0.5px solid #5c5a5a;
+    border: 0.5px solid #dee2e6;
     padding: 0vw 10vw 5vw 10vw;
     border-radius: 5px;
     width: fit-content;
